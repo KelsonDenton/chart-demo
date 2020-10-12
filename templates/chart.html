@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1, shrink-to-fit=no">
+    <title>Title</title>
+    <!-- Page specific CSS -->
+    <link hrf="/static/css/Chart.css" rel="stylesheet"
+          crossorigin="anonymous">
+</head>
+<body>
+
+    <canvas id="chart-1" width="400" height="300"></canvas>
+    <canvas id="chart-2" width="400" height="300"></canvas>
+    <canvas id="chart-3" width="400" height="300"></canvas>
+
+    <!-- Page specific JS Code -->
+<script src="/static/js/Chart.bundle.js"></script>
+<script>
+    var chart1 = document.getElementById('chart-1')
+    var barData = {
+        labels:['Eagles', 'Maggies', 'Dockers', 'Cats', 'Blues', 'Quokkas'],
+        datasets: [{
+            label: 'Popularity',
+            data:[12, 5, 8, 23, 17, 8],
+            borderwidth: 1,
+        }],
+    }
+    var barOptions = {
+        scales: {
+            yAxes:[{
+                ticks:{
+                    beginAtZero: true,
+                },
+            }],
+        },
+    }
+    var myChart1 = new Chart(chart1, {
+        type: 'bar',
+        data: barData,
+        options: barOptions
+    })
+</script>
+</body>
+</html>
